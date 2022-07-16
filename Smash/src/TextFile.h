@@ -1,8 +1,7 @@
 #ifndef TEXT_FILE_H
 #define TEXT_FILE_H
 
-
-#include "LibrariesHeader.h"
+#include "Ext.h"
 
 namespace smash
 {
@@ -67,7 +66,7 @@ namespace smash
 #endif 
 
 
-// EXAMPLE CODE
+// SOME CODE EXAMPLE
 /*
 
 smash::TextFile file;

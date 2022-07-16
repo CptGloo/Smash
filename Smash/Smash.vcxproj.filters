@@ -24,15 +24,21 @@
     <ClCompile Include="src\TextFile.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\Screen.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\App.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\LibrariesHeader.h">
+    <ClInclude Include="src\Ext.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\TextFile.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Screen.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

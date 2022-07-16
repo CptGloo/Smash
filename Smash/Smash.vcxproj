@@ -129,11 +129,13 @@
   <ItemGroup>
     <ClCompile Include="src\App.cpp" />
     <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\Screen.cpp" />
     <ClCompile Include="src\TextFile.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\App.h" />
-    <ClInclude Include="src\LibrariesHeader.h" />
+    <ClInclude Include="src\Ext.h" />
+    <ClInclude Include="src\Screen.h" />
     <ClInclude Include="src\TextFile.h" />
   </ItemGroup>
   <ItemGroup>
