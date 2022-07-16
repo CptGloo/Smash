@@ -9,8 +9,8 @@ namespace smash
 	class Screen
 	{
 	private:
-		const int screenWidth;
-		const int screenHeight;
+		const int width;
+		const int height;
 		wchar_t* screen;
 		HANDLE console;
 		DWORD bytesWritten;

@@ -28,8 +28,6 @@ int main(int argc, char** argv)
 
 	while (!shouldQuit)
 	{
-
-		
 		screen.clear();
 
 		if (GetAsyncKeyState(VK_DOWN) & 0x8000)
@@ -39,6 +37,9 @@ int main(int argc, char** argv)
 
 		screen.display((int)currentLine, file);
 		
+		if (GetAsyncKeyState(VK_LCONTROL) & 0x8000 && GetAsyncKeyState((unsigned short)'S') & 0x8000)
+			file.save();
+
 		shouldQuit = GetAsyncKeyState(VK_LCONTROL) & 0x8000 && GetAsyncKeyState((unsigned short)'Q') & 0x8000;
 	}
 

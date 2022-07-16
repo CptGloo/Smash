@@ -1,6 +1,7 @@
 #ifndef TEXT_FILE_H
 #define TEXT_FILE_H
 
+
 #include "Ext.h"
 
 namespace smash
@@ -66,7 +67,7 @@ namespace smash
 #endif 
 
 
-// SOME CODE EXAMPLE
+// EXAMPLE CODE
 /*
 
 smash::TextFile file;
