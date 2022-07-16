@@ -18,22 +18,14 @@ namespace smash
 		TextFile(const char* _path);
 		~TextFile();
 		TextFile(const TextFile& _file);
-
-		void save();
-		int size() { return content.size(); }
-		
-		// returns the array of character at a specific line	
+		int size();
 		void getLine(int i, std::string& str);
-
-		// replace a line in the content vector where i is the index	
-		void replace(int i, std::string& str);
-		void replace(int i, const char* c);
-
-		// insert a line. the index can go from 0 to size().
-		// if i = size() then the line is added at the end of the file.
-		// if i = 0, the line is added at the top of the file.
-		void insert(int i, std::string& str);
+		void edit(int i, const char* c);
+		void edit(int i, std::string& str);
 		void insert(int i, const char* c);
+		void insert(int i, std::string& str);
+		void erase(int i);
+		void save();
 
 		class FileNotFound : public std::exception
 		{
@@ -56,9 +48,10 @@ namespace smash
 
 			IndexOutOfBound()
 			{}
+
 			virtual const char* what() const throw()
 			{
-				return "Index is out of bound...";
+				return "Index passed was out of bound";
 			}
 		};
 	};

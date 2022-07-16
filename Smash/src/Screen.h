@@ -3,7 +3,6 @@
 
 #include "Ext.h"
 
-
 namespace smash
 {
 	class Screen
@@ -18,17 +17,9 @@ namespace smash
 	public:
 		Screen(const int width, const int height);
 		~Screen();
-		void clear();
-		void display(int line, class TextFile& file);
+		int width() { return width; }
+		int height() { return height; }
 	};
 }
 
 #endif
-
-
-// Some Code about cursor :
-//HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
-//COORD pos = { 3, 6 };
-//SetConsoleCursorPosition(hConsole, pos);
-//WriteConsole(hConsole, "Hello", 5, NULL, NULL);
-

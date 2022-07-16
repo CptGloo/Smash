@@ -32,6 +32,83 @@ namespace smash
 		content = _file.content;
 	}
 
+	int TextFile::size()
+	{
+		return content.size();
+	}
+
+	void TextFile::getLine(int i, std::string& str)
+	{
+		if (i < 0 || i >= content.size())
+		{
+			throw IndexOutOfBound();
+		}
+		else
+		{
+			str = content[i];
+		}
+	}
+	void TextFile::edit(int i, const char* c)
+	{
+		if (i < 0 || i >= content.size())
+		{
+			throw IndexOutOfBound();
+		}
+		else
+		{
+			content[i] = c;
+		}
+	}
+	void TextFile::edit(int i, std::string& str)
+	{
+		if (i < 0 || i >= content.size())
+		{
+			throw IndexOutOfBound();
+		}
+		else
+		{
+			content[i] = str;
+		}
+	}
+
+	void TextFile::insert(int i, const char* c)
+	{
+		if (i < 0 || i > content.size())
+		{
+			throw IndexOutOfBound();
+		}
+		else
+		{
+			auto it = content.begin();
+			content.insert(it, std::string(c));
+		}
+	}
+
+	void TextFile::insert(int i, std::string& str)
+	{
+		if (i < 0 || i > content.size())
+		{
+			throw IndexOutOfBound();
+		}
+		else
+		{
+			auto it = content.begin();
+			content.insert(it, std::string(str));
+		}
+	}
+	void TextFile::erase(int i)
+	{
+		if (i < 0 || i >= content.size())
+		{
+			throw IndexOutOfBound();
+		}
+		else
+		{
+			auto it = content.begin();
+			content.erase(it + i);
+		}
+	}
+
 	void TextFile::save()
 	{
 		std::ofstream s;
@@ -46,59 +123,4 @@ namespace smash
 		}
 		else throw FileNotFound(path);
 	}
-
-	void TextFile::getLine(int i, std::string& str)
-	{
-		if (i < 0 || i >= content.size())
-			throw IndexOutOfBound();
-		else
-		{
-			str = content[i];
-		}
-	}
-
-	void TextFile::replace(int i, std::string& str)
-	{
-		if (i < 0 || i >= content.size())
-			throw IndexOutOfBound();
-		else
-		{
-			content[i] = str;
-		}
-	}
-
-	void TextFile::replace(int i, const char* c)
-	{
-		if (i < 0 || i >= content.size())
-			throw IndexOutOfBound();
-		else
-		{
-			content[i] = c;
-		}
-	}
-
-	void TextFile::insert(int i, std::string& str)
-	{
-		if (i < 0 || i > content.size())
-			throw IndexOutOfBound();
-		else
-		{
-			std::vector<std::string>::iterator it;
-			it = content.begin() + i;
-			it = content.insert(it, std::string(str));
-		}
-	}
-
-	void TextFile::insert(int i, const char* c)
-	{
-		if (i < 0 || i > content.size())
-			throw IndexOutOfBound();
-		else
-		{
-			std::vector<std::string>::iterator it;
-			it = content.begin() + i;
-			it = content.insert(it, std::string(c));
-		}
-	}
-
 }
