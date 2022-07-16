@@ -1,0 +1,126 @@
+
+		
+int main(int argc, char* argv[])
+{
+
+	const char* str = "This is supposed to be simpler.";
+	char str2[] = "This is supposed to be simpler.";
+
+	int n = 0;
+	char i = 'q';
+
+	while (i != NULL)
+	{
+		i = str[n];
+		n++;
+		std::cout << i ;
+	}
+
+	std::cout << std::endl << n << std::endl;
+	return 0;
+}
+----------------------------------
+
+int main(int argc, char* argv[])
+{
+
+	const char* str = "This is supposed to be simpler.";
+	char str2[] = "This is supposed to be simpler.";
+
+	std::cout << std::strlen(str);
+
+	return 0;
+}
+
+-----------------------------------
+
+int main(int argc, char* argv[])
+{
+
+	const char* str = "This is supposed to be simpler.";
+	char str2[100] = "This is supposed to be simpler.";
+
+	strcat_s(str2, str);
+	std::cout << str2;
+
+	return 0;
+}
+----------------------------------
+
+int main(int argc, char* argv[])
+{
+
+	const char* str = "Tralalalalalalalla.";
+	char str2[100] = "This is supposed to be simpler.";
+
+	strcpy_s(str2, str);
+	std::cout << str2;
+
+	return 0;
+}
+
+-----------------------------------
+The C style string belongs to C language and continues to support in C++ also strings in C are the one-dimensional array of characters which gets terminated by \0 (null character).
+
+This is how the strings in C are declared:
+
+char ch[6] = {'H', 'e', 'l', 'l', 'o', '\0'};
+
+Actually, you do not place the null character at the end of a string constant. The C++ compiler automatically places the \0 at the end of the string when it initializes the array.
+
+The string class is huge and includes many constructors, member functions, and operators.
+
+Programmers may use the constructors, operators and member functions to achieve the following:
+
+    Creating string objects
+    Reading string objects from keyboard
+    Displaying string objects to the screen
+    Finding a substring from a string
+    Modifying string
+    Adding objects of string
+    Comparing strings
+    Accessing characters of a string
+    Obtaining the size or length of a string, etc...
+
+Manipulate Null-terminated string:
+
+C++ supports a wide range of functions that manipulate null-terminated strings. These are:
+
+    strcpy(str1, str2): Copies string str2 into string str1.
+    strcat(str1, str2): Concatenates string str2 onto the end of string str1.
+    strlen(str1): Returns the length of string str1.
+    strcmp(str1, str2): Returns 0 if str1 and str2 are the same; less than 0 if str1<str2; greater than 0 if str1>str2.
+    strchr(str1, ch): Returns a pointer to the first occurrence of character ch in string str1.
+    strstr(str1, str2): Returns a pointer to the first occurrence of string str2 in string str1.
+
+
+Important functions supported by std::string :
+
+    append(): This function appends a part of a string to another string
+    assign():This function assigns a partial string
+    at(): This function obtains the character stored at a specified location
+    begin(): This function returns a reference to the start of the string
+    capacity(): This function gives the total element that can be stored
+    compare(): This function compares a string against the invoking string
+    empty(): This function returns true if the string is empty
+    end(): This function returns a reference to the end of the string
+    erase(): This function removes character as specified
+    find(): This function searches for the occurrence of a specified substring
+    length(): It gives the size of a string or the number of elements of a string
+    swap(): This function swaps the given string with the invoking one
+
+    String(): This constructor is used for creating an empty string
+    String(const char *str): This constructor is used for creating string objects from a null-terminated string
+    String(const string *str): This constructor is used for creating a string object from another string object
+
+    =: assignment
+    +: concatenation
+    ==: Equality
+    !=: Inequality
+    <: Less than
+    <=: Less than or equal
+    >: Greater than
+    >=: Greater than or equal
+    []: Subscription
+    <<: Output
+    >>: Input
